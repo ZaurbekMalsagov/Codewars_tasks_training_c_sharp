@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codewars_tasks_training_c_sharp", "Codewars_tasks_training_c_sharp\Codewars_tasks_training_c_sharp.csproj", "{7A051CE0-8768-425C-A956-5A11AAB656C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codewars_task_lib", "Codewars_task_lib\Codewars_task_lib.csproj", "{A268E91B-1986-400B-96C4-78AFCF54BF0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A051CE0-8768-425C-A956-5A11AAB656C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A051CE0-8768-425C-A956-5A11AAB656C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A051CE0-8768-425C-A956-5A11AAB656C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A051CE0-8768-425C-A956-5A11AAB656C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A268E91B-1986-400B-96C4-78AFCF54BF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A268E91B-1986-400B-96C4-78AFCF54BF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A268E91B-1986-400B-96C4-78AFCF54BF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A268E91B-1986-400B-96C4-78AFCF54BF0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15639E4E-3EBB-438C-8B07-5265F4E75401}
+	EndGlobalSection
+EndGlobal
