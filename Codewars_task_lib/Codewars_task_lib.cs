@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codewars_task_lib
-{
-    public  class CodewarsLib
-    {
+namespace Codewars_task_lib {
+    public class CodewarsLib {
 
         /*
          * Create a function which answers the question "Are you playing banjo?".
@@ -62,7 +60,7 @@ namespace Codewars_task_lib
                 case '+':
                     result = value1 + value2;
                     break;
-                case '-': 
+                case '-':
                     result = value1 - value2;
                     break;
                 case '*':
@@ -71,11 +69,26 @@ namespace Codewars_task_lib
                 case '/':
                     result = value1 / value2;
                     break;
-                default: 
-                    result = -1; 
+                default:
+                    result = -1;
                     break;
             }
-                return result;
-            }
+            return result;
         }
+
+        /*Write a function that removes the spaces from the string, then return the resultant string.*/
+        public static string NoSpace(string input) {
+            char[] input_array = input.ToCharArray();
+            char[] output_array = new char[input_array.Length];
+            int i = 0;
+            foreach(char c in input_array) {
+                if (c!= ' ') {
+                    output_array[i] = c;
+                    i++;
+                }
+            }
+            string result = new string(output_array, 0, i);
+            return result;
+        }
+    }
 }
