@@ -10,9 +10,9 @@ namespace Codewars_task_lib
     {
 
         /*
-         Create a function which answers the question "Are you playing banjo?".
-         If your name starts with the letter "R" or lower case "r", you are playing banjo!
-         The function takes a name as its only argument, and returns one of the following strings
+         * Create a function which answers the question "Are you playing banjo?".
+         * If your name starts with the letter "R" or lower case "r", you are playing banjo!
+         * The function takes a name as its only argument, and returns one of the following strings
          */
         public static string AreYouPlayingBanjo(string name) {
             string result = string.Empty;
@@ -29,15 +29,15 @@ namespace Codewars_task_lib
 
 
         /*
-           This function should test if the factor is a factor of base.
-           Return true if it is a factor or false if it is not.
-           About factors
-           Factors are numbers you can multiply together to get another number.
-           2 and 3 are factors of 6 because: 2 * 3 = 6
-           You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
-           You can use the mod operator (%) in most languages to check for a remainder
-           For example 2 is not a factor of 7 because: 7 % 2 = 1
-           Note: base is a non-negative number, factor is a positive number.
+         * This function should test if the factor is a factor of base.
+         * Return true if it is a factor or false if it is not.
+         * About factors
+         * Factors are numbers you can multiply together to get another number.
+         * 2 and 3 are factors of 6 because: 2 * 3 = 6
+         * You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+         * You can use the mod operator (%) in most languages to check for a remainder
+         * For example 2 is not a factor of 7 because: 7 % 2 = 1
+         * Note: base is a non-negative number, factor is a positive number.
          */
         public static bool CheckForFactor(int num, int factor) {
             bool result;
@@ -51,5 +51,31 @@ namespace Codewars_task_lib
         }
 
 
-    }
+        /*
+         * Your task is to create a function that does four basic mathematical operations.
+         * The function should take three arguments - operation(string/char), value1(number), value2(number).
+         * The function should return result of numbers after applying the chosen operation.
+        */
+        public static double basicOp(char operation, double value1, double value2) {
+            double result;
+            switch (operation) {
+                case '+':
+                    result = value1 + value2;
+                    break;
+                case '-': 
+                    result = value1 - value2;
+                    break;
+                case '*':
+                    result = value1 * value2;
+                    break;
+                case '/':
+                    result = value1 / value2;
+                    break;
+                default: 
+                    result = -1; 
+                    break;
+            }
+                return result;
+            }
+        }
 }
