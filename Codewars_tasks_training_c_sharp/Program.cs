@@ -8,9 +8,9 @@ using Codewars_task_lib;
 namespace Codewars_tasks_training_c_sharp {
     internal class Program {
         static void Main(string[] args) {
-            string name = "8 j 8   mBliB8g  imjB8B8  jl  B";
-            name = CodewarsLib.NoSpace(name);
-            Console.WriteLine(name);
+            string name = "samurai";
+            // name = CodewarsLib.Solution(name, "j");
+            Console.WriteLine(CodewarsLib.Solution(name, "ai"));
             Console.ReadLine();
         }
 
