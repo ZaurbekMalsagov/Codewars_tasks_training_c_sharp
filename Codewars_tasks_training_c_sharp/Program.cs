@@ -10,7 +10,7 @@ namespace Codewars_tasks_training_c_sharp {
         static void Main(string[] args) {
             string name = "abcabc";
             // name = CodewarsLib.Solution(name, "j");
-            Console.WriteLine(CodewarsLib.Solution(name, "bc"));
+            Console.WriteLine(CodewarsLib.CountBits(1234));
             Console.ReadLine();
         }
 
