@@ -91,29 +91,8 @@ namespace Codewars_task_lib {
             return result;
         }
 
-        public static bool Solution(string str, string ending) {
-            // TODO: complete
-            char[] str_array = str.ToCharArray();
-            char[] ending_str = ending.ToCharArray();
-            bool result = false;
-            int counter = 0;
-            int remover = 0;
-            foreach(char c in str_array) {
-                for(int i = 0; i < ending_str.Length; i++) {
-                    i += remover;
-                    if (c == ending_str[i]) {
-                        counter++;
-                        remover++;
-                        break;
-                    } else {
-                        counter = 0;
-                    }
-                }
-            }
-            if (counter == ending_str.Length) {
-                result = true;
-            }
-            return result;
+        public static bool Solution(string str, string ending) {  
+            return str.EndsWith(ending);
         }
     }
 }
