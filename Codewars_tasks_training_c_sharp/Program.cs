@@ -8,9 +8,13 @@ using Codewars_task_lib;
 namespace Codewars_tasks_training_c_sharp {
     internal class Program {
         static void Main(string[] args) {
-            string name = "abcabc";
-            // name = CodewarsLib.Solution(name, "j");
-            Console.WriteLine(CodewarsLib.CountBits(1234));
+            string name = "aba";
+            Dictionary<char, int> result = new Dictionary<char, int>();
+            result = CodewarsLib.Count(name);
+            foreach (var item in result) {
+                Console.WriteLine(item);
+            }
+
             Console.ReadLine();
         }
 

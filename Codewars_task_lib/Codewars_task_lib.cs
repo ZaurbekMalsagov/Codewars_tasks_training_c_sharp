@@ -166,6 +166,23 @@ namespace Codewars_task_lib {
 
         }
 
+        /*The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+         * What if the string is empty? Then the result should be empty object literal, {}.
+         * https://www.codewars.com/kata/52efefcbcdf57161d4000091/train/csharp
+         */
+        public static Dictionary<char, int> Count(string str) {
+            Dictionary<char, int> result = new Dictionary<char, int>();
+            char[] chars = str.ToCharArray();
+            foreach (char c in chars) {
+                if (result.ContainsKey(c)) {
+                    result[c]++;
+                } else {
+                    result.Add(c, 1);
+                }
+            }
+            return result;
+        }
+
     }
 }
 
