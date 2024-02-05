@@ -183,6 +183,49 @@ namespace Codewars_task_lib {
             return result;
         }
 
+        /*
+         * Write a simple parser that will parse and run Deadfish.
+         * Deadfish has 4 commands, each 1 character long:
+         * i increments the value (initially 0)
+         * d decrements the value
+         * s squares the value
+         * o outputs the value into the return array
+         * Invalid characters should be ignored.
+         *       Deadfish.Parse("iiisdoso") => new int[] {8, 64};
+         *       https://www.codewars.com/kata/51e0007c1f9378fa810002a9/solutions/csharp
+         */
+        public static int[] ParseDeadFish(string data) {
+            // Return the output array, and ignore all non-op characters
+
+
+            List<int> result = new List<int>();
+
+            int result_number = 0;
+            char[] temp = data.ToCharArray();
+
+            foreach(char c in temp) {
+                switch (c) {
+                    case 'i':
+                        result_number++;
+                        break;
+                    case 'd':
+                        result_number--;
+                        break;
+                    case 's':
+                        result_number*=result_number; 
+                        break;
+                    case 'o':
+                        result.Add( result_number); 
+                        break;
+                }
+
+            }
+            int[] result_array = new int[result.Count];
+            for(int i = 0; i < result.Count; i++) {
+                result_array[i] = result[i];
+            }
+            return result_array;
+        }
     }
 }
 

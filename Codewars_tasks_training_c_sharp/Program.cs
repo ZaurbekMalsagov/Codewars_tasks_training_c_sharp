@@ -8,9 +8,9 @@ using Codewars_task_lib;
 namespace Codewars_tasks_training_c_sharp {
     internal class Program {
         static void Main(string[] args) {
-            string name = "aba";
-            Dictionary<char, int> result = new Dictionary<char, int>();
-            result = CodewarsLib.Count(name);
+            string name = "iiisdoso";
+            int[] result = new int[name.Length];
+            result = CodewarsLib.ParseDeadFish(name);
             foreach (var item in result) {
                 Console.WriteLine(item);
             }
