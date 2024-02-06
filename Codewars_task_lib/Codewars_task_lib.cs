@@ -226,6 +226,37 @@ namespace Codewars_task_lib {
             }
             return result_array;
         }
+
+        /*
+         * ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher.
+         * Create a function that takes a string and returns the string ciphered with Rot13. If there are numbers or special characters included in the string, 
+         * they should be returned as they are. Only letters from the latin/english alphabet should be shifted, like in the original Rot13 "implementation".
+         * https://www.codewars.com/kata/530e15517bc88ac656000716/solutions/csharp
+         */
+
+        public static string Rot13(string message) {
+            // your code here
+            char[] result = message.ToArray();
+            int count = 0;
+
+            foreach (char c in result) {
+                int number_char = (int)c;
+                if (number_char > 96 && number_char < 123) {
+                    int offset = 97;
+                    result[count++] = (char)((number_char + 13) > 122 ? (number_char - offset + 13) % 26 + offset : (number_char + 13));
+
+                }
+                else if (number_char > 64 && number_char < 91) {
+                    int offset = 65;
+                    result[count++] = (char)((number_char + 13) > 90 ? (number_char - offset + 13) % 26 + offset : (number_char + 13));
+
+                }
+                else {
+                    result[count++] = c;
+                }
+            }
+            return new string(result);
+        }
     }
 }
 
