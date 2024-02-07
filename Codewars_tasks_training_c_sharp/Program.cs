@@ -9,7 +9,7 @@ namespace Codewars_tasks_training_c_sharp {
     internal class Program {
         static void Main(string[] args) {
             string name = ">=8?-vf-gjryir";
-            name = CodewarsLib.Rot13(name);
+            name = CodewarsLib.Add("98", "3");
             Console.WriteLine(name);
 
             Console.ReadLine();

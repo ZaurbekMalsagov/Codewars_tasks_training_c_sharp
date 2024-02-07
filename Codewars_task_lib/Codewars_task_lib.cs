@@ -257,6 +257,68 @@ namespace Codewars_task_lib {
             }
             return new string(result);
         }
+
+        /*
+         * Мой нынешний костыльный позор
+         * We need to sum big numbers and we require your help.
+         * Write a function that returns the sum of two numbers. The input numbers are strings and the function must return a string.
+         * Example
+         * * add("12302151515151515151515151515185978767", "321"); -> "444"
+         * * add("11", "99");   -> "110"
+         * 
+         * https://www.codewars.com/kata/525f4206b73515bffb000b21/train/csharp
+         */
+
+        public static string Add(string a, string b) {
+            // return Convert.ToString(Int64.Parse(a) + Int64.Parse(b)); // Fix this!
+
+            string result = string.Empty; // сюда будем вкладывать результат
+            int array_length = (a.Length >= b.Length) ? a.Length : b.Length; // определяем максимальную длину числа
+            int num_v_ume = 0; // здесь будем хранить "цифру в уме"
+
+
+            List<int> array_a = new List<int>();
+            List<int> array_b = new List<int>(); ;
+            int[] result_array = new int[array_length*2]; ; // массив для хранения результата сложения
+
+
+
+            // Раскладываем строки на созданные массивы
+
+            foreach(char num_a in a.ToCharArray()) {
+                array_a.Add((int)(num_a - '0'));
+            }
+            foreach(char num_b in b.ToCharArray()) {
+                array_b.Add((int)(num_b - '0'));
+            }
+            while (array_a.Count < array_length) {
+                array_a.Add(0);
+            }
+            while (array_b.Count < array_length) {
+                array_b.Add(0);
+            }
+
+            for (int i = array_length-1; i >= 0; i--) {
+                if ((array_a[i] + array_b[i] + num_v_ume) < 10) {
+                    result_array[i] = array_a[i] + array_b[i] + num_v_ume;
+                    // result += array_a[i] + array_b[i] + num_v_ume;
+                } else {
+                    // result += (array_a[i] + array_b[i] + num_v_ume) % 10;
+                    result_array[i] = (array_a[i] + array_b[i] + num_v_ume) % 10;
+                    num_v_ume = (array_a[i] + array_b[i] + num_v_ume) / 10;
+                    if (i == 0 && num_v_ume != 0) {
+                        result += num_v_ume;
+                    }
+                }
+            }
+            foreach(int i in result_array) {
+                result += i;
+            }
+            
+            return result;
+        }
     }
 }
+
+
 
