@@ -321,6 +321,46 @@ namespace Codewars_task_lib {
             
             return result;
         }
+
+
+        /*
+         * Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
+         * 12 ==> 21
+         * 513 ==> 531
+         * 2017 ==> 2071
+         * If the digits can't be rearranged to form a bigger number, return -1 (or nil in Swift, None in Rust):
+         * 9 ==> -1
+         * 111 ==> -1
+         * 531 ==> -1
+         * https://www.codewars.com/kata/55983863da40caa2c900004e/train/csharp
+         * 
+         */
+        public static long NextBiggerNumber(long n) {
+            //code me
+            long result = 0;
+            char[] temp_array = n.ToString().ToCharArray();
+            string temp_string = string.Empty;
+            List<int> temp_list = new List<int>();
+            foreach(char c in temp_array) {
+                temp_list.Add((int)(c - '0'));
+            }
+
+            for(int i = temp_list.Count - 2;  i >= 0 ; i--) {
+                if (temp_list[i] < temp_list[i + 1]) {
+                    (temp_list[i+1], temp_list[i]) = (temp_list[i], temp_list[i+1]);
+                    break;
+                }
+            }
+
+
+            foreach (int i in temp_list) {
+                temp_string += i;
+            }
+
+            result = Int32.Parse(temp_string);
+
+            return result > n? result: -1;
+        }
     }
 }
 

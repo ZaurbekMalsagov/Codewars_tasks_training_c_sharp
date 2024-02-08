@@ -9,8 +9,9 @@ namespace Codewars_tasks_training_c_sharp {
     internal class Program {
         static void Main(string[] args) {
             string name = ">=8?-vf-gjryir";
-            name = CodewarsLib.Add("98", "3");
-            Console.WriteLine(name);
+            long n = 1234567890;
+            n = CodewarsLib.NextBiggerNumber(n);
+            Console.WriteLine(n);
 
             Console.ReadLine();
         }
