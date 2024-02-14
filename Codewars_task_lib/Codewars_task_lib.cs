@@ -337,50 +337,57 @@ namespace Codewars_task_lib {
          */
         public static long NextBiggerNumber(long n) {
             //code me
-            long result = 0;
-            int count = 0;
-            char[] temp_array = n.ToString().ToCharArray();
-            string temp_string = string.Empty;
-            List<int> temp_list = new List<int>();
-            List<int> ostatok_list = new List<int>();
-            foreach(char c in temp_array) {
-                temp_list.Add((int)(c - '0'));
-            }
-            int finding_index = 0;
+            /*  long result = 0;
+              int count = 0;
+              char[] temp_array = n.ToString().ToCharArray();
+              string temp_string = string.Empty;
+              List<int> temp_list = new List<int>();
+              List<int> ostatok_list = new List<int>();
+              foreach(char c in temp_array) {
+                  temp_list.Add((int)(c - '0'));
+              }
+              int finding_index = 0;
 
-            for(int i = temp_list.Count - 2;  i >= 0 ; i--) {
-                if (temp_list[i] < temp_list[i + 1]) {
-                    
-                    (temp_list[i+1], temp_list[i]) = (temp_list[i], temp_list[i+1]);
-                    finding_index = i+1;
+              for(int i = temp_list.Count - 2;  i >= 0 ; i--) {
+                  if (temp_list[i] < temp_list[i + 1]) {
 
-                    break;
+                      (temp_list[i+1], temp_list[i]) = (temp_list[i], temp_list[i+1]);
+                      finding_index = i+1;
+
+                      break;
+                  }
+
+              }
+              for(int i = finding_index; i < temp_list.Count; i++) {
+                  ostatok_list.Add(temp_list[i]);
+              }
+
+              ostatok_list.Sort();
+
+              for (int i = finding_index; i < temp_list.Count; i++) {
+                  temp_list[i] = ostatok_list[count++];
+              }
+              result = long.Parse(temp_list.ToString());
+
+              return result > n? result: -1;*/
+            var digits = n.ToString().ToCharArray();
+            for (int i = digits.Length - 1; i > 0; i--) {
+                if (digits[i] > digits[i - 1]) {
+                    var rightPartNoSort = digits.Skip(i).ToList();
+                    var pivot = digits[i - 1];
+                    char minElement = rightPartNoSort.Where(x => x > pivot).Min();
+                    var minElementIndex = rightPartNoSort.IndexOf(minElement);
+
+                    // swap elements
+                    rightPartNoSort[minElementIndex] = pivot;
+                    digits[i - 1] = minElement;
+
+                    var rightPart = rightPartNoSort.OrderBy(x => x).ToArray();
+                    var result = long.Parse(new string(digits.Take(i).Concat(rightPart).ToArray()));
+                    return result > n ? result : -1;
                 }
-                
             }
-            for(int i = finding_index; i < temp_list.Count; i++) {
-                ostatok_list.Add(temp_list[i]);
-            }
-
-            ostatok_list.Sort();
-            
-            for (int i = finding_index; i < temp_list.Count; i++) {
-                temp_list[i] = ostatok_list[count++];
-            }
-            result = IntArrayToNumber(temp_list);
-
-            return result > n? result: -1;
-        }
-
-        private static int IntArrayToNumber(List<int> temp_list) {
-            string temp_string = string.Empty;
-            foreach (int i in temp_list) {
-                temp_string += i;
-            }
-
-            
-
-            return Int32.Parse(temp_string); ;
+            return -1;
         }
     }
 }
